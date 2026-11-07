@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para una amiga especial 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffd6e7, #ff9fc9, #ffe4ef);
+    font-family: 'Comic Sans MS', cursive;
+    overflow-x: hidden;
+    color: #b83272;
+}
+
+.contenedor {
+    position: relative;
+    width: 90%;
+    max-width: 650px;
+    margin: 65px auto;
+    padding: 30px 23px;
+    background: rgba(255,255,255,0.78);
+    border: 3px solid white;
+    border-radius: 30px;
+    box-shadow: 0 0 30px #ff78b5;
+    text-align: center;
+    z-index: 2;
+    animation: aparecer 1.5s ease;
+}
+
+h1 {
+    color: #ec4b99;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.kitty {
+    font-size: 65px;
+    animation: saltar 2s infinite ease-in-out;
+    display: inline-block;
+}
+
+.mensaje {
+    background: #fff0f6;
+    border-radius: 20px;
+    padding: 23px;
+    text-align: justify;
+    line-height: 1.9;
+    font-size: 16px;
+    border: 2px dashed #ff91bd;
+}
+
+.firma {
+    margin-top: 23px;
+    font-size: 20px;
+    color: #e84393;
+    font-weight: bold;
+}
+
+.flotante {
+    position: fixed;
+    top: -80px;
+    font-size: 35px;
+    z-index: 1;
+    animation: caer linear infinite;
+    pointer-events: none;
+}
+
+@keyframes caer {
+    to {
+        transform: translateY(115vh) rotate(360deg);
+    }
+}
+
+@keyframes saltar {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+    background: #ff69a9;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-top: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #ffacd0;
+}
+
+button:hover {
+    background: #e84393;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="kitty">🎀</div>
+
+    <h1>Para una amiga muy especial 💗</h1>
+
+    <p class="subtitulo">
+        Un pequeño detalle hecho con mucho cariño 🌸
+    </p>
+
+    <div class="mensaje">
+        Quiero que sepas que, aunque nuestra amistad sea
+        muy reciente y ni siquiera llevemos una semana
+        de conocernos, te has convertido en una personita
+        a la que le tengo muchísimo cariño. 💗
+
+        <br><br>
+
+        A veces no hace falta conocer a alguien durante
+        años para darse cuenta de lo bonita que puede
+        ser su presencia en nuestra vida. Hay personas
+        que llegan de repente, sin avisar, y poco a poco
+        se ganan un lugar especial en nuestro corazón.
+        Y siento que eso está pasando contigo. 🥺
+
+        <br><br>
+
+        Tal vez todavía nos falten muchísimas cosas por
+        conocer el uno del otro, muchas conversaciones,
+        risas, momentos bonitos y recuerdos por crear,
+        pero quiero que sepas que me alegra mucho
+        haberte conocido.
+
+        <br><br>
+
+        Espero que esta amistad siga creciendo cada día,
+        que podamos confiar el uno en el otro, apoyarnos
+        cuando las cosas no estén bien y compartir
+        muchísimos momentos felices.
+
+        <br><br>
+
+        Nunca pienses que por llevar poquito tiempo
+        conociéndonos tu amistad vale menos. Para mí,
+        las personas especiales no se miden por el
+        tiempo que llevan en nuestra vida, sino por
+        lo bonito que nos hacen sentir.
+
+        <br><br>
+
+        Gracias por haber llegado a mi vida.
+        Te quiero muchísimo, amiguita. Nunca pierdas
+        esa forma tan bonita de ser. 💕🎀
+
+        <br><br>
+
+        Y recuerda que aquí tienes a alguien que
+        desea verte sonreír y que espera que esta
+        amistad dure muchísimo tiempo. 🌷
+    </div>
+
+    <div class="firma">
+        Con muchísimo cariño para ti 💗
+    </div>
+
+    <button onclick="mensajeExtra()">
+        Presiona aquí, amiguita 🎀
+    </button>
+
+    <p id="extra" style="margin-top:15px;"></p>
+
+</div>
+
+<script>
+const decoraciones = ["🎀", "💗", "💕", "🌸", "🐱", "💖"];
+
+function crearFlotante() {
+    const elemento = document.createElement("div");
+    elemento.className = "flotante";
+    elemento.innerHTML =
+        decoraciones[Math.floor(Math.random() * decoraciones.length)];
+
+    elemento.style.left = Math.random() * 100 + "vw";
+    elemento.style.animationDuration =
+        (4 + Math.random() * 6) + "s";
+
+    document.body.appendChild(elemento);
+
+    setTimeout(() => elemento.remove(), 10000);
+}
+
+setInterval(crearFlotante, 450);
+
+function mensajeExtra() {
+    document.getElementById("extra").innerHTML =
+    "¡Eres una personita muy especial! Nunca olvides lo mucho que vales. 💗🎀";
+}
+</script>
+
+</body>
+</html>
